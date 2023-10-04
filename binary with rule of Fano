@@ -1,0 +1,32 @@
+string = str(input())
+
+arr = list(string)
+i = 0
+while i < 100000000000000000:
+    if (2**i)<=len(string) and (2**(i+1))>len(string):
+        k = i
+        break
+    i+=1
+remainder0 = len(string) % (2**k)
+
+arr_new = []
+for j in range(0,2**k):
+    binary = ""
+    while j > 0:
+        remainder = j % 2
+        binary = str(remainder) + binary
+        j = j // 2
+    if (len(binary)<k):
+        binary = '0'*(k-len(binary)) + binary
+    arr_new.append(binary)
+
+for x in range(0,remainder0):
+    y = arr_new[x]
+    y1 = y + '0'
+    y2 = y + '1'
+    arr_new[x] = y1
+    arr_new.append(y2)
+    
+
+print(arr)
+print(arr_new)
