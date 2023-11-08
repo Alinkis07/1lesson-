@@ -1,0 +1,11 @@
+a = int(input('Enter a: '))
+b = int(input('Enter b: '))
+nums=[]
+divs=[]
+for i in range (a,b+1):
+    for j in range (i,0,-1):
+        if i%j == 0:
+            divs.append(j)
+    if len(divs) == 4:
+        print(i, ':', divs)
+    divs.clear()
