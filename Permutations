@@ -1,0 +1,15 @@
+def permute(arr, i, length): 
+    if i==length: 
+        print(''.join(arr) )
+    else: 
+        for j in range(i,length): 
+            arr[i], arr[j] = arr[j], arr[i] 
+            permute(arr, i+1, length) 
+            arr[i], arr[j] = arr[j], arr[i]  
+  
+
+str = input('Enter your string: ')
+print ('Permutations of your string: ')
+n = len(str) 
+arr = list(str) 
+permute(arr, 0, n)
