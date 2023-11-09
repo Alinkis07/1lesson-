@@ -1,0 +1,14 @@
+from itertools import permutations, product
+
+def F(x, y, z, w):
+    return w and (x <= y) and (x or (not(y) == z))
+
+for perm in permutations('xyzw'):
+    for a, b, c, d, e in product([0,1], repeat=5):
+        table = [[a,1,1,1,0],
+                 [b,c,0,0,1],
+                 [0,d,e,0,1]]
+        if table[1] == table[2]:
+            continue
+        if all(F(**dict(zip(perm, row))) == row[-1] for row in table):
+            print(*perm)
