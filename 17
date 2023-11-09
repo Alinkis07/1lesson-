@@ -1,0 +1,12 @@
+N = 1
+R = 0
+while R<26:
+    N = str(bin(N)[2:])
+    if len(N) % 2 == 0:
+        R = N[:len(N) // 2] + '1' + N[len(N) // 2:]
+    else:
+        R = N
+    R = int(R)
+    N = int(N)
+    N+=1
+print(N-1)
