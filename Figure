@@ -1,0 +1,43 @@
+class Figure:
+ 
+    def area(self):
+        pass
+
+class Triangle(Figure):
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+ 
+        if (a+b)>c and (a+c)>b and (b+c)>a:
+            pass
+        else:
+            print('There is no such triangle')
+ 
+    def area(self):
+        p = (self.a + self.b + self.c) / 2
+        return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
+        
+    def info(self):
+        return 'Triangle with sides a, b, c'
+        
+class Square(Figure):
+    def __init__(self, a):
+        self.a = a
+ 
+    def area(self):
+        return a*a
+        
+    def info(self):
+        return 'Square with side a'
+
+class Rectangle(Figure):
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def area(self):
+        return a*b
+        
+    def info(self):
+        return 'Rectangle with sides a and b'
