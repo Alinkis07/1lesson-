@@ -1,0 +1,30 @@
+class Candy():
+    def __init__(self, name, price, weight):
+        self.name = name
+        self.price = price
+        self.weight = weight
+    def __repr__(self):
+        return f"{self.name}-{self.price}-{self.weight}"
+class Chocolate(Candy):
+    def __init__ (self, name, price, weight, cocoa_percentage, chocolate_type):
+        super().__init__(name, price, weight)
+        self.cocoa_percentage = cocoa_percentage
+        self.chocolate_type = chocolate_type
+class Gummy(Candy):
+    def __init__ (self, name, price, weight, flavor, shape):
+        super().__init__(name, price, weight)
+        self.flavor = flavor
+        self.shape = shape
+class HardCandy(Candy):
+    def __init__ (self, name, price, weight, flavor, filled):
+        super().__init__(name, price, weight)
+        self.flavor = flavor
+        self.filled = filled
+
+ex1 = Candy(Chocolate, 125, 100)
+ex2 = Candy(Gummy, 75, 100)
+ex3 = Candy(HardCandy, 100, 100)
+
+lst = [ex1, ex2, ex3]
+lst = sorted(lst, key=lambda x: x.price)
+print(lst)
