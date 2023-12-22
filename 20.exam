@@ -1,0 +1,75 @@
+class NewNum():
+    def __init__(self, n):
+        self.n = n
+    def __ne__(self, other):
+        def sum_of_digits(x):
+            x = int(x)
+            if x < 10:
+                return x
+            else:
+                return x % 10 + sum_of_digits(x // 10)
+        if isinstance(other, (str)):
+            return sum_of_digits(self.n) != sum_of_digits(other)
+        elif isinstance(other, (NewNum)):
+            return sum_of_digits(self.n) != sum_of_digits(other.n)
+    def __eq__(self, other):
+        def sum_of_digits(x):
+            x = int(x)
+            if x < 10:
+                return x
+            else:
+                return x % 10 + sum_of_digits(x // 10)
+        if isinstance(other, (str)):
+            return sum_of_digits(self.n) == sum_of_digits(other)
+        elif isinstance(other, (NewNum)):
+            return sum_of_digits(self.n) == sum_of_digits(other.n)
+    def __lt__(self, other):
+        def sum_of_digits(x):
+            x = int(x)
+            if x < 10:
+                return x
+            else:
+                return x % 10 + sum_of_digits(x // 10)
+        if isinstance(other, (str)):
+            return sum_of_digits(self.n) < sum_of_digits(other)
+        elif isinstance(other, (NewNum)):
+            return sum_of_digits(self.n) < sum_of_digits(other.n)
+    def __gt__(self, other):
+        def sum_of_digits(x):
+            x = int(x)
+            if x < 10:
+                return x
+            else:
+                return x % 10 + sum_of_digits(x // 10)
+        if isinstance(other, (str)):
+            return sum_of_digits(self.n) > sum_of_digits(other)
+        elif isinstance(other, (NewNum)):
+            return sum_of_digits(self.n) > sum_of_digits(other.n)
+    def __ge__(self, other):
+        def sum_of_digits(x):
+            x = int(x)
+            if x < 10:
+                return x
+            else:
+                return x % 10 + sum_of_digits(x // 10)
+        if isinstance(other, (str)):
+            return sum_of_digits(self.n) >= sum_of_digits(other)
+        elif isinstance(other, (NewNum)):
+            return sum_of_digits(self.n) >= sum_of_digits(other.n)
+    def __le__(self, other):
+        def sum_of_digits(x):
+            x = int(x)
+            if x < 10:
+                return x
+            else:
+                return x % 10 + sum_of_digits(x // 10)
+        if isinstance(other, (str)):
+            return sum_of_digits(self.n) <= sum_of_digits(other)
+        elif isinstance(other, (NewNum)):
+            return sum_of_digits(self.n) <= sum_of_digits(other.n)
+    
+str1 = input()
+str2 = input()
+str1 = NewNum(str1)
+str2 = NewNum(str2)
+print(str1!=str2)
