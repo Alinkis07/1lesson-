@@ -1,0 +1,38 @@
+class Subject:
+    def __init__(self, name, tchr, clssrm):
+        self.name = name
+        self.tchr = tchr
+        self.clssrm = clssrm
+    def getname(self):
+        return self.name
+    def gettchr(self):
+        return self.tchr
+    def getclssrm(self):
+        return self.clssrm
+    def setname(self, name):
+        self.name = name
+    def settchr(self, tchr):
+        self.tchr = tchr
+    def setclssrm(self, clssrm):
+        self.clssrm = clssrm
+class Day(Subject):
+    def __init__(self, day, lst):
+        self.day = day
+        self. lst = lst
+    lst = []*8
+    def day(self, lst):
+        for elem in lst:
+            elem = Subject(self.name, self.clssrm, self.tchr)
+    def getday(self.day):
+        return self.lst
+
+class Week(Day):
+    def __init__(self, week, lst2):
+        self.week = week
+        self.lst2 = lst2
+    lst2 = []*7
+    def week(self, lst2):
+        for elem in lst2:
+            elem = Day(self.lst)
+    def getweek(self.week):
+        return self.lst2
