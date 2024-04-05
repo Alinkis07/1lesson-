@@ -1,0 +1,16 @@
+from functools import lru_cache
+
+@lru_cache(None)
+def f(N,e):
+    if N==5500 and e==0:
+        return 1
+    if N==5500 and (e<0 or e>0):
+        return 0
+    if N>5500:
+        return 0
+    e = e - len(str(N))
+    if e<0:
+        return 0
+    return f(N+3,e) + f(N*4,e) + F(N*5,e)
+
+print(f(1,1000))
